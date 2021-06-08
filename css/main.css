@@ -166,6 +166,12 @@ html {
   margin-bottom: 40px;
 }
 
+@media (max-width: 413px) {
+  .landing .content h1 {
+    font-size: 18px;
+  }
+}
+
 .landing .content button {
   border: 1px solid black;
   padding: 16px 22px;
@@ -179,8 +185,8 @@ html {
 
 @media (max-width: 391px) {
   .landing .content button {
-    font-size: 18px;
-    padding: 16px 5px;
+    font-size: 15px;
+    padding: 12px 3px;
   }
 }
 
