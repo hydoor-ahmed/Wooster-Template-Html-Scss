@@ -1,0 +1,720 @@
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+// Small
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+// Medium
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+// Large
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+// $============= VARS =============$
+$b: black;
+$w: white;
+$overlay: rgba(0, 0, 0, 0.8);
+// $============= VARS =============$
+
+html {
+  scroll-behavior: smooth;
+}
+
+// ========== Start Nav ==========
+.menu-show {
+  display: block !important;
+}
+.nav {
+  position: absolute;
+  min-height: 80px;
+  width: 100%;
+  user-select: none;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 580px) {
+      a img {
+        width: 160px;
+      }
+    }
+  }
+  .menu-icon {
+    cursor: pointer;
+    z-index: 1;
+    font-size: 23px;
+  }
+  .links {
+    position: relative;
+  }
+  ul {
+    display: none;
+    position: absolute;
+    background: $b;
+    width: 144px;
+    right: 0;
+    top: 61px;
+    border-radius: 3px;
+    &::before {
+      content: "";
+      position: absolute;
+      border-width: 20px;
+      border-color: transparent transparent $b transparent;
+      border-style: solid;
+      top: -39px;
+      right: 5px;
+    }
+    li {
+      padding: 10px 10px;
+      text-align: center;
+      a {
+        padding: 10px 10px;
+        color: $w;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 17px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #777;
+          width: 143px;
+          height: 1px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+// ========== End Nav ==========
+
+// ========== Start Landing ==========
+.landing {
+  background-image: url(../img/header.jpg);
+  background-size: cover;
+  height: 100vh;
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    p {
+      position: relative;
+      padding-bottom: 30px;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 86px;
+        height: 1px;
+        background-color: $b;
+        bottom: 0;
+      }
+    }
+
+    h1 {
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+    a {
+      border: 1px solid $b;
+      padding: 16px 22px;
+      color: $b;
+      font-size: 18px;
+      transition: 0.5s;
+      @media (max-width: 391px) {
+        font-size: 18px;
+        padding: 16px 5px;
+      }
+
+      &:hover {
+        background: $b;
+        color: $w;
+      }
+    }
+  }
+}
+// ========== End Landing ==========
+
+// ========== Start Landing Text ==========
+.landing-text {
+  background: $b;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  p {
+    color: $w;
+    flex-basis: 77%;
+    @media (max-width: 992px) {
+      font-size: 17px;
+    }
+  }
+  a {
+    color: $b;
+    background: $w;
+    padding: 13px 19px;
+    border-radius: 40px;
+    transition: 0.4s;
+    border: 1px solid $w;
+    @media (max-width: 992px) {
+      font-size: 17px;
+      text-align: center;
+    }
+
+    &:hover {
+      color: $w;
+      background: $b;
+      border: 1px solid $w;
+    }
+  }
+}
+// ========== End Landing Text ==========
+
+// ========== Start Our Beginning ==========
+.beginning {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .our-beginning {
+    flex-basis: 55%;
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 11px;
+      text-transform: uppercase;
+    }
+    h5 {
+      font-size: 13px;
+      font-weight: 500;
+      color: #777;
+      padding-bottom: 20px;
+      position: relative;
+      margin-bottom: 20px;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: $b;
+        width: 30px;
+        height: 1.7px;
+      }
+    }
+    p {
+      color: #777;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    #p2 {
+      margin-bottom: 55px;
+    }
+    button {
+      color: $b;
+      border: 1px solid $b;
+      padding: 12px 25px;
+      transition: 0.4s;
+      background: transparent;
+      cursor: pointer;
+      margin-bottom: 30px;
+      &:hover {
+        color: $w;
+        background: $b;
+      }
+    }
+  }
+  .img {
+    img {
+      width: 500px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .beginning {
+    .img {
+      display: none;
+    }
+    .our-beginning {
+      flex-basis: 100%;
+    }
+  }
+}
+// ========== End Our Beginning ==========
+
+// ========== Start Video ==========
+.video {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../img/keyboard.jpg);
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-size: cover;
+  background-position-y: -400px;
+  position: relative;
+  color: $w;
+  text-align: center;
+  .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+    a {
+      color: $w;
+      font-size: 45px;
+    }
+  }
+}
+// ========== End Video ==========
+
+// ========== Start Main Heading ==========
+.main-heading {
+  margin-top: 65px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .content {
+    text-align: center;
+    width: 100%;
+    h3 {
+      font-weight: 500;
+      margin-bottom: 19px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 19px;
+      color: #777;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 20px;
+      margin-bottom: 70px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 160px;
+        height: 1px;
+        background: $b;
+      }
+    }
+    h4 {
+      font-weight: normal;
+      margin-bottom: 70px;
+      color: #777;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      li:not(:last-child) {
+        margin-right: 20px;
+      }
+      li {
+        button {
+          color: $w;
+          background: $b;
+          padding: 11px 23px;
+          transition: 0.4s;
+          border: 1px solid $b;
+          cursor: pointer;
+          &:hover {
+            background: $w;
+            color: $b;
+            border: 1px solid $b;
+          }
+        }
+      }
+    }
+    @media (max-width: 711px) {
+      ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        li:not(:last-child) {
+          margin-bottom: 50px;
+          margin-right: 0;
+        }
+        li {
+          button {
+            color: $w;
+            background: $b;
+            transition: 0.4s;
+            border: 1px solid $b;
+            width: 150px;
+            &:hover {
+              background: $w;
+              color: $b;
+              border: 1px solid $b;
+            }
+          }
+          a:nth-child(:first-child) {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+// ========== End Main Heading ==========
+
+// ========== Start Portfolio ==========
+.portfolio {
+  .container {
+    position: relative;
+    .imgs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      img {
+        width: 100%;
+      }
+    }
+    button {
+      margin-top: 50px;
+      background: transparent;
+      padding: 12px 22px;
+      border: 1px solid $b;
+      cursor: pointer;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.4s;
+
+      &:hover {
+        background-color: $b;
+        color: $w;
+      }
+    }
+  }
+}
+// ========== End Portfolio ==========
+
+// ========== Start Testimonial ==========
+.testimonial {
+  position: relative;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../img/coffe.jpg);
+  background-position-y: center;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: $w;
+  .testimonial-content {
+    i {
+      border-radius: 50%;
+      background: $w;
+      color: $b;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    span {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+}
+// ========== End Testimonial ==========
+
+// ========== Start About ==========
+.about {
+  .container {
+    .imgs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      column-gap: 15px;
+      row-gap: 15px;
+
+      .img {
+        position: relative;
+        overflow: hidden;
+        img {
+          width: 100%;
+          position: relative;
+          transition: 0.4s;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        h6 {
+          position: absolute;
+          bottom: 0;
+          color: $w;
+          background: rgba(0, 0, 0, 0.738);
+          width: 100%;
+          text-align: center;
+          padding: 18px 0;
+        }
+      }
+    }
+
+    .about-text {
+      margin-top: 70px;
+      margin-bottom: 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      column-gap: 20px;
+      row-gap: 20px;
+      .text-box {
+        h3 {
+          font-weight: normal;
+          margin-bottom: 20px;
+        }
+        p {
+          color: #777;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+// ========== End About ==========
+
+// ========== Start Subscribe ==========
+.subscribe {
+  background: $b;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .container {
+    h3 {
+      color: $w;
+      font-weight: normal;
+      margin-bottom: 10px;
+      @media (max-width: 992px) {
+        text-align: center;
+      }
+    }
+    .inputs {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    input {
+      width: 80%;
+      padding: 10px 20px;
+      margin-right: calc(100% - 97%);
+      background: transparent;
+      border: 1px solid $w;
+      caret-color: $w;
+      color: $w;
+      @media (max-width: 992px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      @media (max-width: 563px) {
+        &::placeholder {
+          font-size: 15px;
+        }
+      }
+    }
+    button {
+      padding: 14px 30px;
+      background: $w;
+      color: $b;
+      border: none;
+      cursor: pointer;
+      @media (max-width: 992px) {
+        width: 41%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+// ========== End Subscribe ==========
+
+// ========== Start Contact ==========
+.contact {
+  padding-bottom: 100px;
+  .container {
+    position: relative;
+    min-height: 450px;
+    @media (max-width: 1200px) {
+      min-height: 658px;
+      button {
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 40px !important;
+      }
+    }
+    .boxs {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+      @media (max-width: 672px) {
+        flex-direction: column;
+        align-items: center;
+      }
+      .box {
+        @media (max-width: 672px) {
+          margin-bottom: 30px;
+        }
+        i {
+          margin-bottom: 20px;
+          color: #777;
+          font-size: 27px;
+        }
+      }
+    }
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+        .inputs {
+          flex-basis: 100% !important;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        textarea {
+          width: 100% !important;
+          margin-bottom: 80px;
+        }
+      }
+      .inputs {
+        flex-basis: 55%;
+        input {
+          width: 100%;
+          padding: 12px 20px;
+          &::placeholder {
+            font-size: 17px;
+          }
+        }
+      }
+      input:nth-child(1) {
+        display: block;
+      }
+      input:nth-child(2) {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      input:nth-child(3) {
+        display: block;
+      }
+      textarea {
+        resize: none;
+        width: 450px;
+        height: 200px;
+        padding: 10px 20px;
+        &::placeholder {
+          font-size: 17px;
+        }
+      }
+    }
+    button {
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      background: transparent;
+      border: 1px solid $b;
+      color: $b;
+      padding: 12px 20px;
+      text-transform: capitalize;
+      cursor: pointer;
+      transition: 0.4s;
+      &:hover {
+        background: $b;
+        color: $w;
+      }
+    }
+  }
+}
+// ========== End Contact ==========
+
+// ========== Start Footer ==========
+footer {
+  padding-top: 70px;
+  padding-bottom: 100px;
+  background: $b;
+  color: $w;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+  .content {
+    img {
+      margin-bottom: 40px;
+    }
+    .icons {
+      font-size: 18px;
+      a {
+        transition: 0.3s;
+        color: $w;
+        padding: 5px;
+      }
+      i {
+        cursor: pointer;
+      }
+    }
+    h3 {
+      font-weight: normal;
+      font-size: 17px;
+      margin-top: 30px;
+      span {
+        font-weight: bold;
+        a {
+          color: $w;
+        }
+      }
+    }
+  }
+}
+// ========== End Footer ==========
